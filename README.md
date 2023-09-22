@@ -1,8 +1,8 @@
 
 ![Index app](./doc/assets/gRPC.png)
 
-# gRPC_Netflix_CRUD_Nodejs
-CRUD Rest gRPC app para servicios de netflix implementado con Nodejs, Expressjs, etc
+# gRPC_Youtube_Integration_CRUD_Nodejs
+CRUD Rest gRPC app para integración de servicios de Youtube implementado con Nodejs, Expressjs, etc 
 
 <br>
 
