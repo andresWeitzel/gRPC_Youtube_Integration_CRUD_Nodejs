@@ -2,7 +2,7 @@
 ![Index app](./doc/assets/gRPC.png)
 
 # gRPC_Youtube_Integration_CRUD_Nodejs
-CRUD Rest gRPC app para integración de servicios de Youtube implementado con Nodejs, Expressjs, etc 
+CRUD gRPC app para integración de servicios de Youtube implementado con Nodejs, Expressjs, etc 
 
 <br>
 
@@ -154,6 +154,10 @@ npm i dotenv
 ```git
 npm i morgan
 ```
+Instalamos uuid para id's unicos
+```git
+npm i uuid
+```
 * Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) de forma global
 ```git
 npm i -g nodemon
@@ -161,6 +165,10 @@ npm i -g nodemon
 * Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) para desarrollo
 ```git
 npm i nodemon --save-dev
+```
+* Instalamos las librerías para el [compilador gRPC](https://www.npmjs.com/package/@grpc/proto-loader)
+```git
+npm i @grpc/proto-loader
 ```
 * Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
 * El siguiente script configurado en el package.json del proyecto es el encargado de
@@ -268,6 +276,9 @@ npm run dev o npm start
  <br>
 
  
+#### Youtube doc
+* [Data Api](https://developers.google.com/youtube/v3/docs?hl=es-419)
+* [Playlist](https://developers.google.com/youtube/v3/docs/playlists?hl=es-419)
 
 #### Documentación
 * [Arquitectura protocolo gRPC](https://www2.deloitte.com/es/es/blog/todo-tecnologia/2021/grpc-vs-rest-api.html)
