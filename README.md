@@ -1,5 +1,5 @@
 
-![Index app](./doc/assets/componentes-example.png)
+![Index app](./doc/assets/gRPC.png)
 
 # gRPC_Netflix_CRUD_Nodejs
 CRUD Rest gRPC app para servicios de netflix implementado con Nodejs, Expressjs, etc
