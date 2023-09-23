@@ -1,18 +1,21 @@
 //External
 const axios = require("axios");
+const { createJson } = require("../file-system/create-json-data-from-address");
 //Const-vars
 const urlHost = "https://ipwho.is/";
-let arrayIps = ["8.8.4.4","8.8.4.5","8.1.4.4", "8.2.4.4","8.8.4.4", "8.8.4.8", "8.1.4.9", "1.4.4.4", "8.2.4.9","2.8.4.4"];
+let ip;
+let ipsLength = 100;
 let responseData;
-let arrayDataAddress = [];
+let arrayDataAddress;
 
-const getDataFromAddress = async (arrayIps) => {
+const getDataFromSpecificAddress = async (ip) => {
   try {
-    axios.get(urlHost + arrayIps).then(function (response) {
+    arrayDataAddress = [];
+    axios.get(urlHost + ip).then(function (response) {
       responseData = response?.data;
-      if(responseData != undefined || null){
+      if (responseData != undefined || null) {
         arrayDataAddress.push(responseData);
-        console.log(responseData);
+        //console.log(responseData);
       }
     });
     return;
@@ -21,11 +24,31 @@ const getDataFromAddress = async (arrayIps) => {
     return;
   }
 };
-for(let i of arrayIps){
-   //console.log(i);
-    getDataFromAddress(i);
-}
+
+const getDataFromRandomAddress = async () => {
+  try {
+    arrayDataAddress = [];
+    for (let i = 0; i < ipsLength; i++) {
+      ip = `8.8.4.${i}`;
+      await axios.get(urlHost + ip).then(function (response) {
+        responseData = response?.data;
+        if (responseData != undefined || null) {
+          arrayDataAddress.push(responseData);
+          //console.log(responseData);
+        }
+      });
+    }
+    await createJson(arrayDataAddress);
+    return;
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+};
+
+getDataFromRandomAddress();
 
 module.exports = {
-  getDataFromAddress
+  getDataFromSpecificAddress,
+  getDataFromRandomAddress
 };
