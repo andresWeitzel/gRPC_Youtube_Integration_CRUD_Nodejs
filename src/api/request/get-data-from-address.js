@@ -2,7 +2,7 @@
 const axios = require("axios");
 const { createJson } = require("../file-system/create-json-data-from-address");
 //Const-vars
-const urlHost = "https://ipwho.is/";
+const URL = process.env.WHOIS_BASE_URL;
 let ip;
 let ipsLength = 100;
 let responseData;
@@ -11,7 +11,7 @@ let arrayDataAddress;
 const getDataFromSpecificAddress = async (ip) => {
   try {
     arrayDataAddress = [];
-    axios.get(urlHost + ip).then(function (response) {
+    axios.get(URL + ip).then(function (response) {
       responseData = response?.data;
       if (responseData != undefined || null) {
         arrayDataAddress.push(responseData);
@@ -30,7 +30,7 @@ const getDataFromRandomAddress = async () => {
     arrayDataAddress = [];
     for (let i = 0; i < ipsLength; i++) {
       ip = `8.8.4.${i}`;
-      await axios.get(urlHost + ip).then(function (response) {
+      await axios.get(URL + ip).then(function (response) {
         responseData = response?.data;
         if (responseData != undefined || null) {
           arrayDataAddress.push(responseData);
