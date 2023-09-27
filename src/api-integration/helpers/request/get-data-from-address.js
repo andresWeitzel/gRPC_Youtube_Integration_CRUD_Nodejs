@@ -1,6 +1,5 @@
 //External
 const axios = require("axios");
-const { createJson } = require("../file-system/create-json-data-from-address");
 //Const-vars
 const URL = process.env.WHOIS_BASE_URL;
 let ip;
@@ -10,19 +9,14 @@ let arrayDataAddress;
 
 const getDataFromSpecificAddress = async (ip) => {
   try {
-    arrayDataAddress = [];
-    axios.get(URL + ip).then(function (response) {
+  await axios.get(URL + ip).then(function (response) {
       responseData = response?.data;
-      if (responseData != undefined || null) {
-        arrayDataAddress.push(responseData);
-        //console.log(responseData);
-      }
     });
-    return;
   } catch (error) {
     console.log(error);
-    return;
+    responseData = null;
   }
+  return responseData;
 };
 
 const getDataFromRandomAddress = async () => {
@@ -38,15 +32,13 @@ const getDataFromRandomAddress = async () => {
         }
       });
     }
-    await createJson(arrayDataAddress);
-    return;
   } catch (error) {
     console.log(error);
-    return;
+    arrayDataAddress = null;
   }
-};
 
-getDataFromRandomAddress();
+  return arrayDataAddress;
+};
 
 module.exports = {
   getDataFromSpecificAddress,
