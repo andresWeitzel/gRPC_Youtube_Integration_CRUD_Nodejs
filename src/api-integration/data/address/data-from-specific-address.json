@@ -1,0 +1,38 @@
+{
+    "ip": "1.1.1.2",
+    "success": true,
+    "type": "IPv4",
+    "continent": "North America",
+    "continent_code": "NA",
+    "country": "United States",
+    "country_code": "US",
+    "region": "California",
+    "region_code": "CA",
+    "city": "San Jose",
+    "latitude": 37.3382082,
+    "longitude": -121.8863286,
+    "is_eu": false,
+    "postal": "95113",
+    "calling_code": "1",
+    "capital": "Washington D.C.",
+    "borders": "CA,MX",
+    "flag": {
+        "img": "https://cdn.ipwhois.io/flags/us.svg",
+        "emoji": "🇺🇸",
+        "emoji_unicode": "U+1F1FA U+1F1F8"
+    },
+    "connection": {
+        "asn": 13335,
+        "org": "APNIC and Cloudflare DNS Resolver project",
+        "isp": "Cloudflare, Inc.",
+        "domain": "cloudflare.com"
+    },
+    "timezone": {
+        "id": "America/Los_Angeles",
+        "abbr": "PDT",
+        "is_dst": true,
+        "offset": -25200,
+        "utc": "-07:00",
+        "current_time": "2023-09-28T13:20:53-07:00"
+    }
+}

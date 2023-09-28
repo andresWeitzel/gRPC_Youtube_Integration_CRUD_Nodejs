@@ -1,11 +1,10 @@
 //Const-vars
 let fs = require("fs");
-let path ="../data/data-from-address.json";
 
-const createJson = async (object) => {
+const createJson = async (object, dirPath) => {
   try {
     fs.writeFile(
-      path,
+      dirPath,
       JSON.stringify(object, null, 4),
       (err) => {
         if (err) {
