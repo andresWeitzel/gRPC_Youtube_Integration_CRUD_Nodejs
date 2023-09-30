@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service DataAddressService {
+    rpc GetAll (Empty) returns (DataAddressList) {}
+    rpc Get (DataAddressRequestId) returns (Address) {}
+    rpc Insert (Address) returns (Address) {}
+    rpc Update (Address) returns (Address) {}
+    rpc Remove (DataAddressRequestId) returns (Empty) {}
+}
+
+message Empty {}
+
+message Address {
+    string id = 1;
+    string name = 2;
+    int32 age = 3;
+    string address = 4;
+}
+
+message DataAddressList {
+    repeated Address Addresss = 1;
+}
+
+message DataAddressRequestId {
+    string id = 1;
+}
