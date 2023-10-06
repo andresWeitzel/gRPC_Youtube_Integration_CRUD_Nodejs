@@ -291,6 +291,8 @@ npm run dev o npm start
 * [Análisis de tiempo de ejecución protocolos Api's](https://www.youtube.com/watch?v=ryUIRdAgD00)
 
 #### Ejemplos código
+* [Ejemplo base](https://www.honeybadger.io/blog/building-apis-with-node-js-and-grpc/)
+* [Integración Api restful con rpc](https://blog.logrocket.com/communicating-between-node-js-microservices-with-grpc/)
 * [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
 * [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
 
