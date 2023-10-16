@@ -19,6 +19,7 @@ const getDataFromSpecificAddress = async (ip) => {
   return responseData;
 };
 
+//Fix here
 const getDataFromRandomAddress = async () => {
   try {
     arrayDataAddress = [];
