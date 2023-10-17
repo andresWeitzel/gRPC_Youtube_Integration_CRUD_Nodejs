@@ -4,14 +4,15 @@ const axios = require("axios");
 const URL = process.env.WHOIS_BASE_URL;
 let ip;
 let ipsLength = 100;
+let axiosResponse;
 let responseData;
 let arrayDataAddress;
 
 const getDataFromSpecificAddress = async (ip) => {
   try {
-  await axios.get(URL + ip).then(function (response) {
-      responseData = response?.data;
-    });
+    axiosResponse = await axios.get(URL + ip);
+
+    responseData = axiosResponse?.data || null;
   } catch (error) {
     console.log(error);
     responseData = null;
@@ -19,19 +20,19 @@ const getDataFromSpecificAddress = async (ip) => {
   return responseData;
 };
 
-//Fix here
 const getDataFromRandomAddress = async () => {
   try {
     arrayDataAddress = [];
     for (let i = 0; i < ipsLength; i++) {
       ip = `8.8.4.${i}`;
-      await axios.get(URL + ip).then(function (response) {
-        responseData = response?.data;
-        if (responseData != undefined || null) {
-          arrayDataAddress.push(responseData);
-          //console.log(responseData);
-        }
-      });
+      axiosResponse = await axios.get(URL + ip);
+
+      responseData = axiosResponse?.data || null;
+
+      if (responseData != undefined || null) {
+        arrayDataAddress.push(responseData);
+        //console.log(responseData);
+      }
     }
   } catch (error) {
     console.log(error);
@@ -43,5 +44,5 @@ const getDataFromRandomAddress = async () => {
 
 module.exports = {
   getDataFromSpecificAddress,
-  getDataFromRandomAddress
+  getDataFromRandomAddress,
 };
