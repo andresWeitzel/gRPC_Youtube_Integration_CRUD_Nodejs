@@ -1,5 +1,6 @@
 //External
 const axios = require("axios");
+const { splitAddressByLastDot } = require("../format/address");
 //Const-vars
 const URL = process.env.WHOIS_BASE_URL;
 let ip;
@@ -20,19 +21,24 @@ const getDataFromSpecificAddress = async (ip) => {
   return responseData;
 };
 
-const getDataFromRandomAddress = async () => {
+const getDataFromRandomAddress = async (ip) => {
   try {
     arrayDataAddress = [];
+    splitIp = await splitAddressByLastDot(ip);
+    firstValueForIp = splitIp[0];
+    lastValueForIp = parseInt(splitIp[1]);
+
     for (let i = 0; i < ipsLength; i++) {
-      ip = `8.8.4.${i}`;
-      axiosResponse = await axios.get(URL + ip);
-
-      responseData = axiosResponse?.data || null;
-
-      if (responseData != undefined || null) {
-        arrayDataAddress.push(responseData);
-        //console.log(responseData);
-      }
+      if (lastValueForIp >= 253) return;
+      ip = `${firstValueForIp}.${lastValueForIp}`;
+      lastValueForIp++;
+      await axios.get(URL + ip).then(function (response) {
+        responseData = response?.data;
+        if (responseData != undefined || null) {
+          arrayDataAddress.push(responseData);
+          //console.log(responseData);
+        }
+      });
     }
   } catch (error) {
     console.log(error);

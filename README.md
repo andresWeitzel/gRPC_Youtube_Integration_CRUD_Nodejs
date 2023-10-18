@@ -2,6 +2,8 @@
 
 # gRPC\_IP\_Geolocation\_API\_Integration\_Nodejs
 
+Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
+
 Api gRPC para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
 
 *   [Playlist Prueba de Funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurD2RjD9OiBfyKpsgwEzZzBv)
@@ -317,8 +319,23 @@ npm run dev o npm start
 
 #### Ejemplos código
 
+<<<<<<< HEAD
+
+*   [Ejemplo base](https://www.honeybadger.io/blog/building-apis-with-node-js-and-grpc/)
+*   [Integración Api restful con rpc](https://blog.logrocket.com/communicating-between-node-js-microservices-with-grpc/)
 *   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
 *   [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
+
+#### Protocolo buffer (protobuf)
+
+*   [Documentación recomendada](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
+
+\=======
+
+*   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
+*   [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
+
+> > > > > > > c1346c4585f1dc1ca3f0eb94180dce90c70962ad
 
 #### Librerías
 

@@ -1,0 +1,28 @@
+
+syntax = "proto3";
+
+package dataAddressPackage;
+
+//Model
+message Address {
+    string id = 1;
+    string ip = 2;
+}
+
+service DataAddressService {
+    rpc GetAll (voidNoParam) returns (DataAddressList) {}
+    rpc Get (DataAddressRequestId) returns (Address) {}
+    rpc Insert (Address) returns (Address) {}
+    rpc Update (Address) returns (Address) {}
+    rpc Remove (DataAddressRequestId) returns (Empty) {}
+}
+
+
+message DataAddressList {
+    repeated Address Addresss = 1;
+}
+
+message DataAddressRequestId {
+    string id = 1;
+}
+
