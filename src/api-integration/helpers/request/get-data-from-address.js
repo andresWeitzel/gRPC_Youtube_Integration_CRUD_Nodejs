@@ -5,17 +5,15 @@ const { splitAddressByLastDot } = require("../format/address");
 const URL = process.env.WHOIS_BASE_URL;
 let ip;
 let ipsLength = 100;
-let splitIp;
-let firstValueForIp;
-let lastValueForIp;
+let axiosResponse;
 let responseData;
 let arrayDataAddress;
 
 const getDataFromSpecificAddress = async (ip) => {
   try {
-    await axios.get(URL + ip).then(function (response) {
-      responseData = response?.data;
-    });
+    axiosResponse = await axios.get(URL + ip);
+
+    responseData = axiosResponse?.data || null;
   } catch (error) {
     console.log(error);
     responseData = null;
@@ -52,5 +50,5 @@ const getDataFromRandomAddress = async (ip) => {
 
 module.exports = {
   getDataFromSpecificAddress,
-  getDataFromRandomAddress
+  getDataFromRandomAddress,
 };

@@ -1,11 +1,13 @@
-
 ![Index app](./doc/assets/gRPC.png)
 
-#  gRPC_IP_Geolocation_API_Integration_Nodejs
-Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc 
+# gRPC\_IP\_Geolocation\_API\_Integration\_Nodejs
 
-* [IPWHOIS.io api doc](https://ipwhois.io/documentation)
+Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
 
+Api gRPC para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
+
+*   [Playlist Prueba de Funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurD2RjD9OiBfyKpsgwEzZzBv)
+*   [IPWHOIS.io api doc](https://ipwhois.io/documentation)
 
 <br>
 
@@ -13,39 +15,34 @@ Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado c
 
 <details>
  <summary> Ver </summary>
- 
+
  <br>
- 
+
 ### Sección 1)  Descripción, configuración y tecnologías
 
- - [1.0) Descripción del Proyecto.](#10-descripción-)
- - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
- - [1.2) Configuración del proyecto desde cero](#12-configuración-del-proyecto-desde-cero-)
- - [1.3) Tecnologías.](#13-tecnologías-)
+*   [1.0) Descripción del Proyecto.](#10-descripción-)
+*   [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+*   [1.2) Configuración del proyecto desde cero](#12-configuración-del-proyecto-desde-cero-)
+*   [1.3) Tecnologías.](#13-tecnologías-)
 
+### Sección 2) Endpoints y Ejemplos
 
-### Sección 2) Endpoints y Ejemplos 
- 
- - [2.0) EndPoints y recursos.](#20-endpoints-y-recursos-)
+*   [2.0) EndPoints y recursos.](#20-endpoints-y-recursos-)
 
 ### Sección 3) Prueba de funcionalidad y Referencias
- 
- - [3.0) Prueba de funcionalidad.](#30-prueba-de-funcionalidad-)
- - [3.1) Referencias.](#31-referencias-)
 
+*   [3.0) Prueba de funcionalidad.](#30-prueba-de-funcionalidad-)
+*   [3.1) Referencias.](#31-referencias-)
 
 <br>
 
 </details>
 
-
-
 <br>
 
 ## Sección 1)  Descripción, configuración y tecnologías
 
-
-### 1.0) Descripción [🔝](#índice-) 
+### 1.0) Descripción [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
@@ -53,156 +50,195 @@ Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado c
 
 ### 1.0.0) Descripción General
 
-  *  
-  
- 
- ### 1.0.1) Descripción Arquitectura y Funcionamiento
- 
- * 
+*
+
+### 1.0.1) Descripción Arquitectura y Funcionamiento
+
+*
 
 <br>
 
 </details>
-
 
 ### 1.1) Ejecución del Proyecto [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
   <br>
- 
+
 #### 1.1.0) Configuraciones iniciales
-* Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+
+*   Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+
 ```git
 git clone https://github.com/andresWeitzel/gRPC_Netflix_CRUD_Nodejs
 ```
-* Nos posicionamos sobre el proyecto
+
+*   Nos posicionamos sobre el proyecto
+
 ```git
 cd 'projectName'
 ```
-* Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download).
-* Instalamos todas las librerías necesarias
+
+*   Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download).
+*   Instalamos todas las librerías necesarias
+
 ```git
 npm i
 ```
-* Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
-* El siguiente script configurado en el package.json del proyecto es el encargado de
-   * Levantar el servidor con express (entorno productivo)
-   * Levantar el servidor con express y nodemon (entorno local dev)
- ```git
- "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
-  },
+
+*   Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
+*   El siguiente script configurado en el package.json del proyecto es el encargado de
+    *   Levantar el servidor con express (entorno productivo)
+    *   Levantar el servidor con express y nodemon (entorno local dev)
+
+```git
+"scripts": {
+   "dev": "nodemon src/server.js",
+   "start": "node src/server.js"
+ },
 ```
-* Ejecutamos la app desde terminal para entorno local.
+
+*   Ejecutamos la app desde terminal para entorno local.
+
 ```git
 npm run dev
 ```
-* Ejecutamos la app desde terminal para entorno productivo.
+
+*   Ejecutamos la app desde terminal para entorno productivo.
+
 ```git
 npm start
 ```
-* Si se presenta algún mensaje indicando qué el puerto 8080 ya está en uso, podemos terminar todos los procesos dependientes y volver a ejecutar la app
+
+*   Si se presenta algún mensaje indicando qué el puerto 8080 ya está en uso, podemos terminar todos los procesos dependientes y volver a ejecutar la app
+
 ```git
 npx kill-port 8080
 npm run dev o npm start
 ```
 
- 
 <br>
 
 </details>
-
 
 ### 1.2) Configuración del proyecto desde cero [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
  <br>
- 
+
 #### 1.2.0) Configuraciones iniciales
-* Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+
+*   Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
+
 ```git
 git clone https://github.com/andresWeitzel/gRPC_Netflix_CRUD_Nodejs
 ```
-* Nos posicionamos sobre el proyecto
+
+*   Nos posicionamos sobre el proyecto
+
 ```git
 cd 'projectName'
 ```
-* Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download)
-* Abrimos una terminal desde vsc
-* Inicializamos un proyecto nodejs
+
+*   Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download)
+*   Abrimos una terminal desde vsc
+*   Inicializamos un proyecto nodejs
+
 ```git
 npm init -y
 ```
-* Creamos un archivo .gitignore y agregamos los files necesarios (por el momento node_modules)
+
+*   Creamos un archivo .gitignore y agregamos los files necesarios (por el momento node\_modules)
+
 ```git
 node_modules
 ```
-* Creamos un direct source (src) para agregar toda la lógica de nuestra app
-* Instalamos el plugin para [express (framework)](https://www.npmjs.com/package/express)
+
+*   Creamos un direct source (src) para agregar toda la lógica de nuestra app
+*   Instalamos el plugin para [express (framework)](https://www.npmjs.com/package/express)
+
 ```git
 npm i express
 ```
-* Instalamos el plugin para [cors (gestión de recursos)](https://www.npmjs.com/package/cors)
+
+*   Instalamos el plugin para [cors (gestión de recursos)](https://www.npmjs.com/package/cors)
+
 ```git
 npm i cors
 ```
-* Instalamos el plugin para [dotenv (variables de entorno)](https://www.npmjs.com/package/dotenv)
+
+*   Instalamos el plugin para [dotenv (variables de entorno)](https://www.npmjs.com/package/dotenv)
+
 ```git
 npm i dotenv
 ```
-* Instalamos el plugin para [morgan-middleware (errores, formatos, etc)](https://expressjs.com/en/resources/middleware/morgan.html)
+
+*   Instalamos el plugin para [morgan-middleware (errores, formatos, etc)](https://expressjs.com/en/resources/middleware/morgan.html)
+
 ```git
 npm i morgan
 ```
+
 Instalamos uuid para id's unicos
+
 ```git
 npm i uuid
 ```
-* Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) de forma global
+
+*   Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) de forma global
+
 ```git
 npm i -g nodemon
 ```
-* Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) para desarrollo
+
+*   Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) para desarrollo
+
 ```git
 npm i nodemon --save-dev
 ```
-* Instalamos las librerías para el [compilador gRPC](https://www.npmjs.com/package/@grpc/proto-loader)
+
+*   Instalamos las librerías para el [compilador gRPC](https://www.npmjs.com/package/@grpc/proto-loader)
+
 ```git
 npm i @grpc/proto-loader
 ```
-* Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
-* El siguiente script configurado en el package.json del proyecto es el encargado de
-   * Levantar el servidor con express (entorno productivo)
-   * Levantar el servidor con express y nodemon (entorno local dev)
- ```git
- "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
-  },
+
+*   Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
+*   El siguiente script configurado en el package.json del proyecto es el encargado de
+    *   Levantar el servidor con express (entorno productivo)
+    *   Levantar el servidor con express y nodemon (entorno local dev)
+
+```git
+"scripts": {
+   "dev": "nodemon src/server.js",
+   "start": "node src/server.js"
+ },
 ```
-* Ejecutamos la app desde terminal para entorno local.
+
+*   Ejecutamos la app desde terminal para entorno local.
+
 ```git
 npm run dev
 ```
-* Ejecutamos la app desde terminal para entorno productivo.
+
+*   Ejecutamos la app desde terminal para entorno productivo.
+
 ```git
 npm start
 ```
-* Si se presenta algún mensaje indicando qué el puerto 8080 ya está en uso, podemos terminar todos los procesos dependientes y volver a ejecutar la app
+
+*   Si se presenta algún mensaje indicando qué el puerto 8080 ya está en uso, podemos terminar todos los procesos dependientes y volver a ejecutar la app
+
 ```git
 npx kill-port 8080
 npm run dev o npm start
 ```
 
-
-
 <br>
 
 </details>
-
 
 ### 1.3) Tecnologías [🔝](#índice-)
 
@@ -210,27 +246,25 @@ npm run dev o npm start
   <summary>Ver</summary>
  <br>
 
-| **Tecnologías** | **Versión** | **Finalidad** |               
+| **Tecnologías** | **Versión** | **Finalidad** |\
 | ------------- | ------------- | ------------- |
 | [SDK](https://www.serverless.com/framework/docs/guides/sdk/) | 4.3.2  | Inyección Automática de Módulos para Lambdas |
 | [NodeJS](https://nodejs.org/en/) | 14.18.1  | Librería JS |
 | [VSC](https://code.visualstudio.com/docs) | 1.72.2  | IDE |
 | [Postman](https://www.postman.com/downloads/) | 10.11  | Cliente Http |
-| [CMD](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd) | 10 | Símbolo del Sistema para linea de comandos | 
+| [CMD](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd) | 10 | Símbolo del Sistema para linea de comandos |
 | [Git](https://git-scm.com/downloads) | 2.29.1  | Control de Versiones |
 
 </br>
 
-
-| **Plugin** | **Descripción** |               
+| **Plugin** | **Descripción** |\
 | -------------  | ------------- |
 | [Serverless Plugin](https://www.serverless.com/plugins/) | Librerías para la Definición Modular |
 
 </br>
 
-
-| **Extensión** |              
-| -------------  | 
+| **Extensión** |\
+| -------------  |
 | Prettier - Code formatter |
 | YAML - Autoformatter .yml (alt+shift+f) |
 
@@ -238,19 +272,15 @@ npm run dev o npm start
 
 </details>
 
-
 <br>
 
+## Sección 2) Endpoints y Ejemplos.
 
-## Sección 2) Endpoints y Ejemplos. 
-
-
-### 2.0) Endpoints y recursos [🔝](#índice-) 
+### 2.0) Endpoints y recursos [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
 <br>
-
 
 <br>
 
@@ -258,19 +288,15 @@ npm run dev o npm start
 
 <br>
 
+## Sección 3) Prueba de funcionalidad y Referencias.
 
-## Sección 3) Prueba de funcionalidad y Referencias. 
-
-
-### 3.0) Prueba de funcionalidad [🔝](#índice-) 
+### 3.0) Prueba de funcionalidad [🔝](#índice-)
 
 <details>
   <summary>Ver</summary>
 <br>
 
-
 </details>
-
 
 ### 3.1) Referencias [🔝](#índice-)
 
@@ -278,31 +304,51 @@ npm run dev o npm start
   <summary>Ver</summary>
  <br>
 
- 
 #### IPWHOIS.io api doc
-* [Data Api](https://ipwhois.io/documentation)
+
+*   [Data Api](https://ipwhois.io/documentation)
 
 #### Documentación
-* [Guía gRPC](https://www.ionos.es/digitalguide/servidores/know-how/que-es-grpc/)
-* [Arquitectura protocolo gRPC](https://www2.deloitte.com/es/es/blog/todo-tecnologia/2021/grpc-vs-rest-api.html)
-* [Web Api Spotify](https://developer.spotify.com/documentation/web-api/tutorials/getting-started)
-* [Implementación Arquitectura grpc part 1](https://netflixtechblog.com/practical-api-design-at-netflix-part-1-using-protobuf-fieldmask-35cfdc606518)
-* [Implementación Arquitectura grpc part 2](https://netflixtechblog.com/practical-api-design-at-netflix-part-2-protobuf-fieldmask-for-mutation-operations-2e75e1d230e4)
-* [Análisis de tiempo de ejecución protocolos Api's](https://www.youtube.com/watch?v=ryUIRdAgD00)
+
+*   [Guía gRPC](https://www.ionos.es/digitalguide/servidores/know-how/que-es-grpc/)
+*   [Arquitectura protocolo gRPC](https://www2.deloitte.com/es/es/blog/todo-tecnologia/2021/grpc-vs-rest-api.html)
+*   [Web Api Spotify](https://developer.spotify.com/documentation/web-api/tutorials/getting-started)
+*   [Implementación Arquitectura grpc part 1](https://netflixtechblog.com/practical-api-design-at-netflix-part-1-using-protobuf-fieldmask-35cfdc606518)
+*   [Implementación Arquitectura grpc part 2](https://netflixtechblog.com/practical-api-design-at-netflix-part-2-protobuf-fieldmask-for-mutation-operations-2e75e1d230e4)
+*   [Análisis de tiempo de ejecución protocolos Api's](https://www.youtube.com/watch?v=ryUIRdAgD00)
 
 #### Ejemplos código
-* [Ejemplo base](https://www.honeybadger.io/blog/building-apis-with-node-js-and-grpc/)
-* [Integración Api restful con rpc](https://blog.logrocket.com/communicating-between-node-js-microservices-with-grpc/)
-* [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
-* [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
+
+<<<<<<< HEAD
+
+*   [Ejemplo base](https://www.honeybadger.io/blog/building-apis-with-node-js-and-grpc/)
+*   [Integración Api restful con rpc](https://blog.logrocket.com/communicating-between-node-js-microservices-with-grpc/)
+*   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
+*   [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
 
 #### Protocolo buffer (protobuf)
-* [Documentación recomendada](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
 
+*   [Documentación recomendada](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
+
+\=======
+
+*   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
+*   [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
+
+> > > > > > > c1346c4585f1dc1ca3f0eb94180dce90c70962ad
 
 #### Librerías
-* [Manejo de validaciones con express-validator](https://medium.com/dataseries/introduction-to-request-body-validation-in-express-apps-with-express-validator-7b9725ca780d)
-* [Doc oficial express-validator](https://express-validator.github.io/docs/guides/getting-started)
+
+*   [Manejo de validaciones con express-validator](https://medium.com/dataseries/introduction-to-request-body-validation-in-express-apps-with-express-validator-7b9725ca780d)
+*   [Doc oficial express-validator](https://express-validator.github.io/docs/guides/getting-started)
+
+#### Remark-lint
+
+*   [remark-lint-emphasis-marker](https://www.npmjs.com/package/remark-lint-emphasis-marker)
+*   [remark-preset-lint-recommended](https://www.npmjs.com/package/remark-preset-lint-recommended)
+*   [remark-reference-links](https://www.npmjs.com/package/remark-reference-links)
+
+<br>
 
 <br>
 
