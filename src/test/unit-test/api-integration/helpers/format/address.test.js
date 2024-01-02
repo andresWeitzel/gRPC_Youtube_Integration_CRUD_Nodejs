@@ -26,6 +26,37 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
       await expect(typeof splitAddressByLastDotResult == "object").toBe(true);
     });
 
+    msg =
+      "Should return a object type if two valid arguments are passed (This function expects a single argument)";
+    it(msg, async () => {
+      splitAddressByLastDotResult = await splitAddressByLastDot(
+        MOCK_STRING_VALUE,
+        MOCK_STRING_VALUE
+      );
+      await expect(typeof splitAddressByLastDotResult == "object").toBe(true);
+    });
+
+    msg =
+      "Should return a string type if an invalid argument is passed (This function expects a single argument)";
+    it(msg, async () => {
+      splitAddressByLastDotResult = await splitAddressByLastDot(122212131);
+      await expect(typeof splitAddressByLastDotResult == "string").toBe(true);
+    });
+
+    msg =
+      "Should return a string type if a null value is passed (This function expects a single argument)";
+    it(msg, async () => {
+      splitAddressByLastDotResult = await splitAddressByLastDot(null);
+      await expect(typeof splitAddressByLastDotResult == "string").toBe(true);
+    });
+
+    msg =
+      "Should return a string type if a undefined value is passed (This function expects a single argument)";
+    it(msg, async () => {
+      splitAddressByLastDotResult = await splitAddressByLastDot(undefined);
+      await expect(typeof splitAddressByLastDotResult == "string").toBe(true);
+    });
+
     // msg = "Should return a string type if others arguments are passed ";
     // it(msg, async () => {
     //   splitAddressByLastDotResult = await currentDateTime(TODAY_DATE);
