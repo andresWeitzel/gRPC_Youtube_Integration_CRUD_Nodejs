@@ -13,7 +13,8 @@
     "test": "jest --verbose --detectOpenHandles",
     "test:watch": "jest --watch --verbose --detectOpenHandles",
     "test:cov": "jest --coverage --verbose --detectOpenHandles",
-    "test:format-helper": "jest --verbose --detectOpenHandles ./src/test/unit-test/api-integration/helpers/format/*"
+    "test:format-helpers": "jest --verbose --detectOpenHandles ./src/test/unit-test/api-integration/helpers/format/*",
+    "test:request-helpers": "jest --verbose --detectOpenHandles ./src/test/unit-test/api-integration/helpers/request/*"
   },
   "keywords": [],
   "author": "",

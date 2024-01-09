@@ -35,7 +35,7 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
       );
       await expect(typeof splitAddressByLastDotResult == "object").toBe(true);
     });
-
+ 
     msg =
       "Should return a string type if an invalid argument is passed (This function expects a single argument)";
     it(msg, async () => {

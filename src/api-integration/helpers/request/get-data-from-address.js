@@ -1,24 +1,34 @@
 //External
 const axios = require("axios");
+//Helpers
 const { splitAddressByLastDot } = require("../format/address");
-//Const-vars
+//Const
 const URL = process.env.WHOIS_BASE_URL;
-let ip;
-let ipsLength = 100;
+const IP_LENGTH = 100;
+const GET_DATA_FROM_SPECIFIC_ADDRESS_ERROR_NAME =
+  "ERROR in getDataFromSpecificAddress helper function.";
+const GET_DATA_FROM_RANDOM_ADDRESS_ERROR_NAME =
+  "ERROR in getDataFromRandomAddress helper function.";
+//Vars
 let axiosResponse;
 let responseData;
 let arrayDataAddress;
+let msgResponse;
+let msgLog;
 
 const getDataFromSpecificAddress = async (ip) => {
   try {
     axiosResponse = await axios.get(URL + ip);
 
     responseData = axiosResponse?.data || null;
+
+    return responseData;
   } catch (error) {
-    console.log(error);
-    responseData = null;
+    msgResponse = GET_DATA_FROM_SPECIFIC_ADDRESS_ERROR_NAME;
+    msgLog = msgResponse + `Caused by ${error}`;
+    console.log(msgLog);
+    return msgResponse;
   }
-  return responseData;
 };
 
 const getDataFromRandomAddress = async (ip) => {
@@ -28,7 +38,7 @@ const getDataFromRandomAddress = async (ip) => {
     firstValueForIp = splitIp[0];
     lastValueForIp = parseInt(splitIp[1]);
 
-    for (let i = 0; i < ipsLength; i++) {
+    for (let i = 0; i < IP_LENGTH; i++) {
       if (lastValueForIp >= 253) return;
       ip = `${firstValueForIp}.${lastValueForIp}`;
       lastValueForIp++;
@@ -36,16 +46,16 @@ const getDataFromRandomAddress = async (ip) => {
         responseData = response?.data;
         if (responseData != undefined || null) {
           arrayDataAddress.push(responseData);
-          //console.log(responseData);
         }
       });
     }
+    return arrayDataAddress;
   } catch (error) {
-    console.log(error);
-    arrayDataAddress = null;
+    msgResponse = GET_DATA_FROM_RANDOM_ADDRESS_ERROR_NAME;
+    msgLog = msgResponse + `Caused by ${error}`;
+    console.log(msgLog);
+    return msgResponse;
   }
-
-  return arrayDataAddress;
 };
 
 module.exports = {
