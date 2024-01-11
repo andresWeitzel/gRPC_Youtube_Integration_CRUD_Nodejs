@@ -4,8 +4,6 @@
 
 Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
 
-Api gRPC para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
-
 *   [Playlist Prueba de Funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurD2RjD9OiBfyKpsgwEzZzBv)
 *   [IPWHOIS.io api doc](https://ipwhois.io/documentation)
 
