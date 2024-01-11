@@ -76,34 +76,61 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
     });
   });
 
-  // describe("2) Check cases return cases.", () => {
-  //   msg =
-  //     "Should return a object type with data attribute if a valid ip is passed (This function expects a single argument of string type)";
-  //   it(msg, async () => {
-  //     getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
-  //       MOCK_VALID_IP_VALUE
-  //     );
-  //     // await expect(typeof getDataFromSpecificAddressResult == "string").toBe(
-  //     //   true
-  //     // );
-  //   });
-  // });
+  describe("2) Check cases for error.", () => {
+    msg =
+      "Should not thrown an Error if a new Error is passed for arguments. (This function expects a single argument of string type)";
+    it(msg, async () => {
+      let newError = new Error();
+      getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
+        newError
+      );
+      await expect(async () => getDataFromSpecificAddressResult).not.toThrow(
+        Error
+      );
+    });
 
-  //   describe("2) Check cases for error.", () => {
-  //     msg =
-  //       "Should not return a error message and not throw an error if no argument is passed to the function.";
-  //     it(msg, async () => {
-  //       await expect(async () => await getDataFromSpecificAddress()).not.toThrow(
-  //         Error
-  //       );
-  //     });
+    msg =
+      "Should not thrown an Error if no arguments is passed to the function. (This function expects a single argument of string type)";
+    it(msg, async () => {
+      getDataFromSpecificAddressResult = await getDataFromSpecificAddress();
+      await expect(async () => getDataFromSpecificAddressResult).not.toThrow(
+        Error
+      );
+    });
 
-  //     msg =
-  //       "Should not return a error message and not throw an error if a new Error() is passed to the function.";
-  //     it(msg, async () => {
-  //       await expect(
-  //         async () => await getDataFromSpecificAddress(new Error())
-  //       ).not.toThrow(Error);
-  //     });
-  //   });
+    msg =
+      "Should not thrown an Error if null value is passed to the function. (This function expects a single argument of string type)";
+    it(msg, async () => {
+      getDataFromSpecificAddressResult = await getDataFromSpecificAddress(null);
+      await expect(async () => getDataFromSpecificAddressResult).not.toThrow(
+        Error
+      );
+    });
+
+    msg =
+      "Should not thrown an Error if undefined value is passed to the function. (This function expects a single argument of string type)";
+    it(msg, async () => {
+      getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
+        undefined
+      );
+      await expect(async () => getDataFromSpecificAddressResult).not.toThrow(
+        Error
+      );
+    });
+
+    msg =
+      "Should return a string type with 'ERROR in getDataFromSpecificAddress helper function.' value if a new Error is passed for arguments.";
+    it(msg, async () => {
+      let newError = new Error();
+      const GET_DATA_FROM_SPECIFIC_ADDRESS_ERROR_NAME =
+        "ERROR in getDataFromSpecificAddress helper function.";
+
+      getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
+        newError
+      );
+      await expect(getDataFromSpecificAddressResult).toMatch(
+        GET_DATA_FROM_SPECIFIC_ADDRESS_ERROR_NAME
+      );
+    });
+  });
 });
