@@ -4,7 +4,8 @@ const {
   splitAddressByLastDot,
 } = require("../../../../../api-integration/helpers/format/address");
 //Const
-const MOCK_STRING_VALUE = "";
+const MOCK_STRING_01 = process.env.MOCK_STRING_01;
+const MOCK_NUMBER_01 = parseInt(process.env.MOCK_NUMBER_01);
 //Vars
 let msg;
 let splitAddressByLastDotResult;
@@ -20,9 +21,7 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
     msg =
       "Should return a object type if a valid argument is passed (This function expects a single argument)";
     it(msg, async () => {
-      splitAddressByLastDotResult = await splitAddressByLastDot(
-        MOCK_STRING_VALUE
-      );
+      splitAddressByLastDotResult = await splitAddressByLastDot(MOCK_STRING_01);
       await expect(typeof splitAddressByLastDotResult == "object").toBe(true);
     });
 
@@ -30,16 +29,16 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
       "Should return a object type if two valid arguments are passed (This function expects a single argument)";
     it(msg, async () => {
       splitAddressByLastDotResult = await splitAddressByLastDot(
-        MOCK_STRING_VALUE,
-        MOCK_STRING_VALUE
+        MOCK_STRING_01,
+        MOCK_STRING_01
       );
       await expect(typeof splitAddressByLastDotResult == "object").toBe(true);
     });
- 
+
     msg =
       "Should return a string type if an invalid argument is passed (This function expects a single argument)";
     it(msg, async () => {
-      splitAddressByLastDotResult = await splitAddressByLastDot(122212131);
+      splitAddressByLastDotResult = await splitAddressByLastDot(MOCK_NUMBER_01);
       await expect(typeof splitAddressByLastDotResult == "string").toBe(true);
     });
 
