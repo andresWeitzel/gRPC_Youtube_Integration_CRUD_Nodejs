@@ -319,8 +319,6 @@ npm run dev o npm start
 
 #### Ejemplos código
 
-<<<<<<< HEAD
-
 *   [Ejemplo base](https://www.honeybadger.io/blog/building-apis-with-node-js-and-grpc/)
 *   [Integración Api restful con rpc](https://blog.logrocket.com/communicating-between-node-js-microservices-with-grpc/)
 *   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
@@ -330,12 +328,9 @@ npm run dev o npm start
 
 *   [Documentación recomendada](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
 
-\=======
-
 *   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
 *   [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
 
-> > > > > > > c1346c4585f1dc1ca3f0eb94180dce90c70962ad
 
 #### Librerías
 
