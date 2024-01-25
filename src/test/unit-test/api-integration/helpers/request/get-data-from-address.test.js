@@ -51,7 +51,7 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
       getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
         MOCK_VALID_IP_VALUE_01
       );
-      
+      //FIX HERE
       console.log("SS656756565655"+getDataFromSpecificAddressResult);
       await expect(typeof getDataFromSpecificAddressResult == "object").toBe(
         true
