@@ -46,14 +46,12 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
     });
 
     msg =
-      "Should return a object type if a valid ip is passed (This function expects a single argument of string type)";
+      "Should return a string type if a valid ip is passed (This function expects a single argument of string type)";
     it(msg, async () => {
       getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
         MOCK_VALID_IP_VALUE_01
       );
-      //FIX HERE
-      console.log("SS656756565655"+getDataFromSpecificAddressResult);
-      await expect(typeof getDataFromSpecificAddressResult == "object").toBe(
+      await expect(typeof getDataFromSpecificAddressResult == "string").toBe(
         true
       );
     });
