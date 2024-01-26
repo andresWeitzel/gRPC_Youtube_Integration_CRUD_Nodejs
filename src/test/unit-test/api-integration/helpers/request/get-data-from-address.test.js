@@ -12,6 +12,8 @@ const MOCK_VALID_IP_VALUE_01 = process.env.MOCK_VALID_IP_01;
 let msg;
 let getDataFromSpecificAddressResult;
 
+//Updated catch cases
+
 describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
   describe("1) Check cases for arguments.", () => {
     msg =
