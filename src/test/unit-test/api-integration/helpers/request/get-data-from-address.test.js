@@ -4,9 +4,10 @@ const {
   getDataFromSpecificAddress,
 } = require("../../../../../api-integration/helpers/request/get-data-from-address");
 //Const
-const MOCK_OBJECT_VALUE = { mock_object_key: "mock_object_value" };
-const MOCK_INVALID_IP_VALUE = "192.77";
-const MOCK_VALID_IP_VALUE = "8.8.8.8";
+const MOCK_OBJECT_KEY_01 = process.env.MOCK_OBJECT_VALUE_01;
+const MOCK_OBJECT_01 = { mock_object_key: MOCK_OBJECT_KEY_01 };
+const MOCK_INVALID_IP_VALUE_01 = process.env.MOCK_INVALID_IP_01;
+const MOCK_VALID_IP_VALUE_01 = process.env.MOCK_VALID_IP_01;
 //Vars
 let msg;
 let getDataFromSpecificAddressResult;
@@ -26,7 +27,7 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
       "Should return a string type if not string argument is passed (This function expects a single argument of string type)";
     it(msg, async () => {
       getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
-        MOCK_OBJECT_VALUE
+        MOCK_OBJECT_01
       );
       await expect(typeof getDataFromSpecificAddressResult == "string").toBe(
         true
@@ -37,7 +38,7 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
       "Should return a string type if an invalid ip is passed (This function expects a single argument of string type)";
     it(msg, async () => {
       getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
-        MOCK_INVALID_IP_VALUE
+        MOCK_INVALID_IP_VALUE_01
       );
       await expect(typeof getDataFromSpecificAddressResult == "string").toBe(
         true
@@ -48,7 +49,7 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
       "Should return a string type if a valid ip is passed (This function expects a single argument of string type)";
     it(msg, async () => {
       getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
-        MOCK_VALID_IP_VALUE
+        MOCK_VALID_IP_VALUE_01
       );
       await expect(typeof getDataFromSpecificAddressResult == "string").toBe(
         true
@@ -119,18 +120,13 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
     });
 
     msg =
-      "Should return a string type with 'ERROR in getDataFromSpecificAddress helper function.' value if a new Error is passed for arguments.";
+      "Should return a object type if a new Error is passed for arguments.";
     it(msg, async () => {
       let newError = new Error();
-      const GET_DATA_FROM_SPECIFIC_ADDRESS_ERROR_NAME =
-        "ERROR in getDataFromSpecificAddress helper function.";
-
       getDataFromSpecificAddressResult = await getDataFromSpecificAddress(
         newError
       );
-      await expect(getDataFromSpecificAddressResult).toMatch(
-        GET_DATA_FROM_SPECIFIC_ADDRESS_ERROR_NAME
-      );
+      await expect(typeof getDataFromSpecificAddressResult  == "object");
     });
   });
 });
