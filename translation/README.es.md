@@ -329,6 +329,7 @@ npm run dev o npm start
 *   [Documentación recomendada](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
 
 *   [Crud grpc express-nodejs](https://blog.logrocket.com/creating-a-crud-api-with-node-express-and-grpc/)
+
 *   [Videotutorial Crud grpc express-nodejs](https://www.youtube.com/watch?v=xBO7RohEhOY)
 
 #### Librerías
@@ -341,6 +342,10 @@ npm run dev o npm start
 *   [remark-lint-emphasis-marker](https://www.npmjs.com/package/remark-lint-emphasis-marker)
 *   [remark-preset-lint-recommended](https://www.npmjs.com/package/remark-preset-lint-recommended)
 *   [remark-reference-links](https://www.npmjs.com/package/remark-reference-links)
+
+#### Jest
+
+*   [Environment vars solution](https://stackoverflow.com/questions/48033841/test-process-env-with-jest)
 
 <br>
 

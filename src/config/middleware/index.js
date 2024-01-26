@@ -2,16 +2,15 @@
 const express = require("express");
 let morgan = require("morgan");
 let cors = require("cors");
-let listEndpoints = require('express-list-endpoints');
+let listEndpoints = require("express-list-endpoints");
 //Env vars
 const API_GRPC_IP_LOCAL_BASE_URL = process.env.API_GRPC_IP_LOCAL_BASE_URL;
 const APP_PORT = process.env.APP_FIRST_PORT || process.env.APP_SECOND_PORT;
-const API_LOCAL_BASE_ENDPOINT= `${API_GRPC_IP_LOCAL_BASE_URL}:${APP_PORT}`;
-const API_GRPC_IP_ENDPOINT_ADDRESS_NAME_URL = process.env.
-API_GRPC_IP_ENDPOINT_ADDRESS_NAME_URL;
+const API_LOCAL_BASE_ENDPOINT = `${API_GRPC_IP_LOCAL_BASE_URL}:${APP_PORT}`;
+const API_GRPC_IP_ENDPOINT_ADDRESS_NAME_URL =
+  process.env.API_GRPC_IP_ENDPOINT_ADDRESS_NAME_URL;
 //Config router
 const addressRoutes = require("../routes/api-data/address/generate-json-routes");
-
 
 /**
  * @description initial settings for cors, express, etc (Middleware)
@@ -27,7 +26,7 @@ const appMiddleware = async () => {
     //-- start cors --
     //Set cors
     var corsOptions = {
-      origin: API_LOCAL_BASE_ENDPOINT
+      origin: API_LOCAL_BASE_ENDPOINT,
     };
     //Use cors options
     app.use(cors(corsOptions));
@@ -45,11 +44,8 @@ const appMiddleware = async () => {
     app.use(API_GRPC_IP_ENDPOINT_ADDRESS_NAME_URL, addressRoutes);
     //-- end with routes --
 
-    //-- See all endpoints    
+    //-- See all endpoints
     console.log(listEndpoints(app));
-
-
-
 
     return app;
   } catch (error) {
@@ -58,5 +54,5 @@ const appMiddleware = async () => {
 };
 
 module.exports = {
-  appMiddleware
+  appMiddleware,
 };
