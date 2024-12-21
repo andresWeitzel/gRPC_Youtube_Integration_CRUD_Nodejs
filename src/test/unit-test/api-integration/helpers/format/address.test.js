@@ -30,7 +30,7 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
     it(msg, async () => {
       splitAddressByLastDotResult = await splitAddressByLastDot(
         MOCK_STRING_01,
-        MOCK_STRING_01
+        MOCK_STRING_01,
       );
       await expect(typeof splitAddressByLastDotResult == "object").toBe(true);
     });
@@ -62,7 +62,7 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
       "Should not return a error message and not throw an error if no argument is passed to the function.";
     it(msg, async () => {
       await expect(async () => await splitAddressByLastDot()).not.toThrow(
-        Error
+        Error,
       );
     });
 
@@ -70,7 +70,7 @@ describe("- splitAddressByLastDot helper (Unit Test)", () => {
       "Should not return a error message and not throw an error if a new Error() is passed to the function.";
     it(msg, async () => {
       await expect(
-        async () => await splitAddressByLastDot(new Error())
+        async () => await splitAddressByLastDot(new Error()),
       ).not.toThrow(Error);
     });
   });

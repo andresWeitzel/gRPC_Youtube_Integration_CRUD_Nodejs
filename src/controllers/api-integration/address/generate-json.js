@@ -2,11 +2,11 @@
 let path = require("path");
 //Helpers
 const {
-  createJson
+  createJson,
 } = require("../../../api-integration/helpers/file-system/create-json-data-from-address");
 const {
   getDataFromSpecificAddress,
-  getDataFromRandomAddress
+  getDataFromRandomAddress,
 } = require("../../../api-integration/helpers/request/get-data-from-address");
 //Enums
 const { statusCode } = require("../../../enums/http/status-code");
@@ -14,9 +14,11 @@ const { statusCode } = require("../../../enums/http/status-code");
 const statusCodeInternalServerError = statusCode.INTERNAL_SERVER_ERROR;
 const statusCodeBadRequest = statusCode.BAD_REQUEST;
 const statusCodeOk = statusCode.OK;
-let filePathSpecificAddress ="../../../../api-integration/data/address/data-from-specific-address.json";
+let filePathSpecificAddress =
+  "../../../../api-integration/data/address/data-from-specific-address.json";
 let dirPathSpecificAddress = path.join(__dirname + filePathSpecificAddress);
-let filePathRandomAddress ="../../../../api-integration/data/address/data-from-random-addresses.json";
+let filePathRandomAddress =
+  "../../../../api-integration/data/address/data-from-random-addresses.json";
 let dirPathRandomAddress = path.join(__dirname + filePathRandomAddress);
 let ipParam;
 let data;
@@ -29,7 +31,7 @@ const generateJsonFromSpecificAddress = async (req, res) => {
 
     if (ipParam == null) {
       return res.status(statusCodeBadRequest).send({
-        error: "Bad request, the value for the ip parameter does not exist."
+        error: "Bad request, the value for the ip parameter does not exist.",
       });
     }
     //-- end with ipParam  ---
@@ -37,7 +39,7 @@ const generateJsonFromSpecificAddress = async (req, res) => {
 
     if (data == null) {
       return res.status(statusCodeInternalServerError).send({
-        error: "Internal Server Error, the IP data could not be obtained."
+        error: "Internal Server Error, the IP data could not be obtained.",
       });
     }
 
@@ -57,7 +59,7 @@ const generateJsonFromRandomAddress = async (req, res) => {
 
     if (ipParam == null) {
       return res.status(statusCodeBadRequest).send({
-        error: "Bad request, the value for the ip parameter does not exist."
+        error: "Bad request, the value for the ip parameter does not exist.",
       });
     }
     //-- end with ipParam  ---
@@ -65,7 +67,7 @@ const generateJsonFromRandomAddress = async (req, res) => {
 
     if (data == null) {
       return res.status(statusCodeInternalServerError).send({
-        error: "Internal Server Error, the IP data could not be obtained."
+        error: "Internal Server Error, the IP data could not be obtained.",
       });
     }
 
@@ -80,5 +82,5 @@ const generateJsonFromRandomAddress = async (req, res) => {
 
 module.exports = {
   generateJsonFromSpecificAddress,
-  generateJsonFromRandomAddress
+  generateJsonFromRandomAddress,
 };

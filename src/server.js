@@ -1,4 +1,3 @@
-
 //External
 require("dotenv").config();
 //Environment vars
@@ -15,7 +14,7 @@ let app;
 const run = async () => {
   try {
     //Middleware
-    app = await appMiddleware();    
+    app = await appMiddleware();
 
     //Server
     app.listen(APP_PORT, async () => {

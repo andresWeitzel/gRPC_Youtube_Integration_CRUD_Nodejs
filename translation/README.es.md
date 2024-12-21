@@ -1,49 +1,38 @@
 ![Index app](./doc/assets/gRPC.png)
 
-<div align="right">
-    <a href="./translation/README.es.md" target="_blank">
-      <img src="./doc/assets/translation/arg-flag.jpg" width="10%" height="10%" />
-  </a> 
-   <a href="./README.md" target="_blank">
-      <img src="./doc/assets/translation/eeuu-flag.jpg" width="10%" height="10%" />
-  </a>
-</div>
-
-<div align="center">
+# Update here
 
 # gRPC\_IP\_Geolocation\_API\_Integration\_Nodejs
 
-</div>  
+Api gRPC protobuf para la integración de servicios de IPWHOIS.IO implementado con Nodejs, Expressjs, etc
 
-gRPC protobuf api for the integration of IPWHOIS.IO services implemented with Nodejs, Expressjs, Jest, Testing, others.
-
-*   [Playlist Prueba de Funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurD2RjD9OiBfyKpsgwEzZzBv)<a href="https://www.youtube.com/playlist?list=PLCl11UFjHurD2RjD9OiBfyKpsgwEzZzBv" target="_blank"> <img src="./doc/assets/social-networks/yt.png" width="5%" height="5%" /> </a>
+*   [Playlist Prueba de Funcionalidad](https://www.youtube.com/playlist?list=PLCl11UFjHurD2RjD9OiBfyKpsgwEzZzBv)
 *   [IPWHOIS.io api doc](https://ipwhois.io/documentation)
 
 <br>
 
-## Index 📜
+## Índice 📜
 
 <details>
- <summary> See </summary>
+ <summary> Ver </summary>
 
  <br>
 
-### Section 1) Description, configuration and technologies
+### Sección 1)  Descripción, configuración y tecnologías
 
-*   [1.0) Project Description.](#10-description-)
-*   [1.1) Project Execution.](#11-project-execution-)
-*   [1.2) Project setup from scratch](#12-project-setup-from-scratch-)
-*   [1.3) Technologies.](#13-technologies-)
+*   [1.0) Descripción del Proyecto.](#10-descripción-)
+*   [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+*   [1.2) Configuración del proyecto desde cero](#12-configuración-del-proyecto-desde-cero-)
+*   [1.3) Tecnologías.](#13-tecnologías-)
 
-### Section 2) Endpoints and Examples
+### Sección 2) Endpoints y Ejemplos
 
-*   [2.0) EndPoints and resources.](#20-endpoints-and-resources-)
+*   [2.0) EndPoints y recursos.](#20-endpoints-y-recursos-)
 
-### Section 3) Functionality Testing and References
+### Sección 3) Prueba de funcionalidad y Referencias
 
-*   [3.0) Functionality test.](#30-functionality-test-)
-*   [3.1) References.](#31-references-)
+*   [3.0) Prueba de funcionalidad.](#30-prueba-de-funcionalidad-)
+*   [3.1) Referencias.](#31-referencias-)
 
 <br>
 
@@ -51,19 +40,19 @@ gRPC protobuf api for the integration of IPWHOIS.IO services implemented with No
 
 <br>
 
-## Section 1) Description, configuration and technologies
+## Sección 1)  Descripción, configuración y tecnologías
 
-### 1.0) Description [🔝](#index-)
+### 1.0) Descripción [🔝](#índice-)
 
 <details>
-  <summary>See</summary>
+  <summary>Ver</summary>
  <br>
 
-### 1.0.0) General Description
+### 1.0.0) Descripción General
 
 *
 
-### 1.0.1) Description Architecture and Operation
+### 1.0.1) Descripción Arquitectura y Funcionamiento
 
 *
 
@@ -71,180 +60,180 @@ gRPC protobuf api for the integration of IPWHOIS.IO services implemented with No
 
 </details>
 
-### 1.1) Project Execution [🔝](#index-)
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
 
 <details>
-   <summary>See</summary>
-   <br>
+  <summary>Ver</summary>
+  <br>
 
-#### 1.1.0) Initial settings
+#### 1.1.0) Configuraciones iniciales
 
-*   Once a work environment has been created through some IDE, we clone the project
+*   Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
 
 ```git
 git clone https://github.com/andresWeitzel/gRPC_Netflix_CRUD_Nodejs
 ```
 
-*   We position ourselves on the project
+*   Nos posicionamos sobre el proyecto
 
 ```git
 cd 'projectName'
 ```
 
-*   We install the latest LTS version of [Nodejs(v18)](https://nodejs.org/en/download).
-*   We install all the necessary libraries
+*   Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download).
+*   Instalamos todas las librerías necesarias
 
 ```git
 npm i
 ```
 
-*   The environment variables used in the project are maintained to simplify their configuration process. It is recommended to add the corresponding file (.env) to the .gitignore.
-*   The following script configured in the project's package.json is responsible for
-    *   Raise the server with express (productive environment)
-    *   Raise the server with express and nodemon (local dev environment)
+*   Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
+*   El siguiente script configurado en el package.json del proyecto es el encargado de
+    *   Levantar el servidor con express (entorno productivo)
+    *   Levantar el servidor con express y nodemon (entorno local dev)
 
 ```git
 "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
-  },
+   "dev": "nodemon src/server.js",
+   "start": "node src/server.js"
+ },
 ```
 
-*   We run the app from a terminal for a local environment.
+*   Ejecutamos la app desde terminal para entorno local.
 
 ```git
 npm run dev
 ```
 
-*   We run the app from a terminal for a productive environment.
+*   Ejecutamos la app desde terminal para entorno productivo.
 
 ```git
 npm start
 ```
 
-*   If a message appears indicating that port 8080 is already in use, we can terminate all dependent processes and run the app again
+*   Si se presenta algún mensaje indicando qué el puerto 8080 ya está en uso, podemos terminar todos los procesos dependientes y volver a ejecutar la app
 
 ```git
 npx kill-port 8080
-npm run dev or npm start
+npm run dev o npm start
 ```
 
 <br>
 
 </details>
 
-### 1.2) Project configuration from scratch [🔝](#index-)
+### 1.2) Configuración del proyecto desde cero [🔝](#índice-)
 
 <details>
-   <summary>See</summary>
-  <br>
+  <summary>Ver</summary>
+ <br>
 
-#### 1.2.0) Initial settings
+#### 1.2.0) Configuraciones iniciales
 
-*   Once a work environment has been created through some IDE, we clone the project
+*   Una vez creado un entorno de trabajo a través de algún ide, clonamos el proyecto
 
 ```git
 git clone https://github.com/andresWeitzel/gRPC_Netflix_CRUD_Nodejs
 ```
 
-*   We position ourselves on the project
+*   Nos posicionamos sobre el proyecto
 
 ```git
 cd 'projectName'
 ```
 
-*   We install the latest LTS version of [Nodejs(v18)](https://nodejs.org/en/download)
-*   We open a terminal from vsc
-*   We initialize a nodejs project
+*   Instalamos la última versión LTS de [Nodejs(v18)](https://nodejs.org/en/download)
+*   Abrimos una terminal desde vsc
+*   Inicializamos un proyecto nodejs
 
 ```git
 npm init -y
 ```
 
-*   We create a .gitignore file and add the necessary files (for the moment node\_modules)
+*   Creamos un archivo .gitignore y agregamos los files necesarios (por el momento node\_modules)
 
 ```git
 node_modules
 ```
 
-*   We create a direct source (src) to add all the logic of our app
-*   We install the plugin for [express (framework)](https://www.npmjs.com/package/express)
+*   Creamos un direct source (src) para agregar toda la lógica de nuestra app
+*   Instalamos el plugin para [express (framework)](https://www.npmjs.com/package/express)
 
 ```git
 npm i express
 ```
 
-*   We install the plugin for [cors (resource management)](https://www.npmjs.com/package/cors)
+*   Instalamos el plugin para [cors (gestión de recursos)](https://www.npmjs.com/package/cors)
 
 ```git
 npm i cors
 ```
 
-*   We install the plugin for [dotenv (environment variables)](https://www.npmjs.com/package/dotenv)
+*   Instalamos el plugin para [dotenv (variables de entorno)](https://www.npmjs.com/package/dotenv)
 
 ```git
 npm i dotenv
 ```
 
-*   We install the plugin for [morgan-middleware (errors, formats, etc)](https://expressjs.com/en/resources/middleware/morgan.html)
+*   Instalamos el plugin para [morgan-middleware (errores, formatos, etc)](https://expressjs.com/en/resources/middleware/morgan.html)
 
 ```git
 npm i morgan
 ```
 
-We install uuid for unique ids
+Instalamos uuid para id's unicos
 
 ```git
 npm i uuid
 ```
 
-*   We install the plugin for [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) globally
+*   Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) de forma global
 
 ```git
 npm i -g nodemon
 ```
 
-*   We install the plugin for [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) for development
+*   Instalamos el plugin para [nodemon (autoreload server)](https://www.npmjs.com/package/nodemon) para desarrollo
 
 ```git
 npm i nodemon --save-dev
 ```
 
-*   We install the libraries for the [gRPC compiler](https://www.npmjs.com/package/@grpc/proto-loader)
+*   Instalamos las librerías para el [compilador gRPC](https://www.npmjs.com/package/@grpc/proto-loader)
 
 ```git
 npm i @grpc/proto-loader
 ```
 
-*   The environment variables used in the project are maintained to simplify their configuration process. It is recommended to add the corresponding file (.env) to the .gitignore.
-*   The following script configured in the project's package.json is responsible for
-    *   Raise the server with express (productive environment)
-    *   Raise the server with express and nodemon (local dev environment)
+*   Las variables de entorno utilizadas en el proyecto se mantienen para simplificar el proceso de configuración de las mismas. Es recomendado agregar el archivo correspondiente (.env) al .gitignore.
+*   El siguiente script configurado en el package.json del proyecto es el encargado de
+    *   Levantar el servidor con express (entorno productivo)
+    *   Levantar el servidor con express y nodemon (entorno local dev)
 
 ```git
 "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
-  },
+   "dev": "nodemon src/server.js",
+   "start": "node src/server.js"
+ },
 ```
 
-*   We run the app from a terminal for a local environment.
+*   Ejecutamos la app desde terminal para entorno local.
 
 ```git
 npm run dev
 ```
 
-*   We run the app from a terminal for a productive environment.
+*   Ejecutamos la app desde terminal para entorno productivo.
 
 ```git
 npm start
 ```
 
-*   If a message appears indicating that port 8080 is already in use, we can terminate all dependent processes and run the app again
+*   Si se presenta algún mensaje indicando qué el puerto 8080 ya está en uso, podemos terminar todos los procesos dependientes y volver a ejecutar la app
 
 ```git
 npx kill-port 8080
-npm run dev or npm start
+npm run dev o npm start
 ```
 
 <br>

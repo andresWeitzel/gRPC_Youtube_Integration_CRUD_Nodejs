@@ -7,8 +7,9 @@
     "start": "node src/server.js",
     "start:dev": "nodemon src/server.js",
     "start:rpc": "node src/server-rpc.js",
+    "format-prettier": "prettier --write \"{src,test}/**/*.{js,ts}\"",
     "check": "remark . --quiet --frail",
-    "format": "remark . --quiet --frail --output",
+    "format-remark": "remark . --quiet --frail --output",
     "format-md": "remark . --output",
     "test": "jest --verbose --detectOpenHandles",
     "test:watch": "jest --watch --verbose --detectOpenHandles",
@@ -31,7 +32,7 @@
     "fs": "^0.0.1-security",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.0.3",
+    "prettier": "^3.2.4",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
@@ -64,7 +65,10 @@
         "remark-lint-strong-marker",
         "*"
       ],
-      ["remark-lint-heading-style", "atx" ]
+      [
+        "remark-lint-heading-style",
+        "atx"
+      ]
     ]
   }
 }
