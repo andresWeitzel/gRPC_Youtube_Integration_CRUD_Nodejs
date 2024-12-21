@@ -12,7 +12,6 @@ const GET_DATA_FROM_RANDOM_ADDRESS_ERROR_NAME =
 //Vars
 let axiosResponse;
 let responseData;
-let arrayDataAddress;
 let msgResponse;
 let msgLog;
 
@@ -33,30 +32,38 @@ const getDataFromSpecificAddress = async (ip) => {
 
 const getDataFromRandomAddress = async (ip) => {
   try {
-    arrayDataAddress = [];
-    splitIp = await splitAddressByLastDot(ip);
-    firstValueForIp = splitIp[0];
-    lastValueForIp = parseInt(splitIp[1]);
+    let arrayDataAddress = [];
+    let [firstValueForIp, lastValueForIp] = await splitAddressByLastDot(ip);
+    let ipBase = `${firstValueForIp}.`;
 
     for (let i = 0; i < IP_LENGTH; i++) {
-      if (lastValueForIp >= 253) return;
-      ip = `${firstValueForIp}.${lastValueForIp}`;
-      lastValueForIp++;
-      await axios.get(URL + ip).then(function (response) {
-        responseData = response?.data;
-        if (responseData != undefined || null) {
+      if (lastValueForIp >= 253) break;
+
+      const currentIp = `${ipBase}${lastValueForIp}`;
+      lastValueForIp++; 
+
+      try {
+        const response = await axios.get(URL + currentIp);
+        const responseData = response?.data;
+
+        if (responseData) {
           arrayDataAddress.push(responseData);
         }
-      });
+      } catch (innerError) {
+        console.log(`Error fetching data for IP ${currentIp}:`, innerError);
+      }
     }
+
     return arrayDataAddress;
   } catch (error) {
-    msgResponse = GET_DATA_FROM_RANDOM_ADDRESS_ERROR_NAME;
-    msgLog = msgResponse + `Caused by ${error}`;
+    const msgResponse = GET_DATA_FROM_RANDOM_ADDRESS_ERROR_NAME;
+    const msgLog = `${msgResponse} Caused by ${error}`;
     console.log(msgLog);
     return msgResponse;
   }
 };
+
+
 
 module.exports = {
   getDataFromSpecificAddress,

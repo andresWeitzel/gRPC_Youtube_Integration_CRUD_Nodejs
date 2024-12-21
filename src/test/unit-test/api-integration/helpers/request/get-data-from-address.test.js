@@ -1,18 +1,20 @@
 "use strict";
+//External imports
+const axios = require("axios");
 //Helpers
 const {
   getDataFromSpecificAddress,
 } = require("../../../../../api-integration/helpers/request/get-data-from-address");
 //Const
-const MOCK_OBJECT_KEY_01 = process.env.MOCK_OBJECT_VALUE_01;
+const MOCK_OBJECT_KEY_01 = process.env.MOCK_OBJECT_VALUE_01 || "mock_value";
 const MOCK_OBJECT_01 = { mock_object_key: MOCK_OBJECT_KEY_01 };
-const MOCK_INVALID_IP_VALUE_01 = process.env.MOCK_INVALID_IP_01;
-const MOCK_VALID_IP_VALUE_01 = process.env.MOCK_VALID_IP_01;
+const MOCK_INVALID_IP_VALUE_01 = process.env.MOCK_INVALID_IP_01 || "invalid_ip";
+const MOCK_VALID_IP_VALUE_01 = process.env.MOCK_VALID_IP_01 || "127.0.0.1";
+const MOCK_URL = "http://mockurl.com";
 //Vars
 let msg;
 let getDataFromSpecificAddressResult;
 
-//Updated catch cases
 
 describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
   describe("1) Check cases for arguments.", () => {
@@ -131,4 +133,6 @@ describe("- getDataFromSpecificAddress helper (Unit Test)", () => {
       await expect(typeof getDataFromSpecificAddressResult  == "object");
     });
   });
+
+
 });
